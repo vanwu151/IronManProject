@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDITUSERINFO</title>
+    {% load static %}
+    <link href="/static/FinaceNote/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/FinaceNote/css/bootstrap.css" rel="stylesheet">
+    <script src="/static/FinaceNote/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/FinaceNote/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h>{{ userinfo.info }}</h>
+    </div>
+    <li>用户：{{ userinfo.name }}</li>
+    <li>昵称：{{ userinfo.nickname }}</li>
+    <li>性别：{{ userinfo.sex }}</li>
+    <li>爱好：{{ userinfo.hobby }}</li>
+    <li>户籍：{{ userinfo.city }}</li>
+    <li>角色：{{ userinfo.userrole }}</li>
+    {% for filename, url , n in userinfo.fileinfolist %}
+    {{ n }}：<a href="{{ url }}" download="{{ filename }}">{{ filename }}</a>
+    <br></br>
+    {% endfor %}
+    <form action="/Modrole/" method="POST" enctype="multipart/form-data">
+        <p>
+
+            普通用户<input type="radio"  name="role" value="user"/>
+            管理员<input type="radio" name="role" value="admin"/>
+        </p>
+        <p>
+            <h>输入新密码：</h>
+            <input type="password" name="newpass" placeholder="新密码" />        
+        </p>
+        <input type="submit" class="btn-primary" value="修改"/>
+    </form>
+    
+    <br></br>
+    <a href="/Manageuserinfo/"><input type="button" class="btn-primary" value="返回列表"></a>
+</body>
+</html>

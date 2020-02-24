@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://218.94.64.98:38880/users/password/forgot -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/FinaceNote/img/text.ico" type="image/x-icon">
+    <title>注册文件管理系统</title>
+
+    
+
+<!-- css file -->
+<link href="/static/FinaceNote/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/toastr.min.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/sweetalert.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/style.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/jquery.validator.css" rel="stylesheet">
+<link href="/static/FinaceNote/css/datatables.min.css" rel="stylesheet">
+<!-- scripts -->
+<script src="/static/FinaceNote/js/jquery-2.1.1.js"></script>
+<script src="/static/FinaceNote/js/sweetalert.min.js"></script>
+<script src="/static/FinaceNote/js/bootstrap.min.js"></script>
+<script src="/static/FinaceNote/js/datatables.min.js"></script>
+    <link href="/static/FinaceNote/css/jumpserver.css" rel="stylesheet">
+    <script src="/static/FinaceNote/js/jumpserver.js"></script>
+</head>
+
+<body class="gray-bg">
+    <div class="passwordBox animated fadeInDown">
+        <div class="row">
+            <div class="form-group">
+                <h>{{ userinfo.info }}</h>
+            </div>
+
+            <div class="col-md-12">
+                <div class="ibox-content">
+
+                    <img src="/static/FinaceNote/img/logo.png" style="margin: auto" width="82" height="82">
+                    <h2 class="font-bold" style="display: inline">注册</h2>
+
+                    <h1></h1>
+                    
+                    <p>
+                        输入您的注册信息
+                    </p>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="m-t" role="form" action="/register/" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="text" name="user" class="form-control" placeholder="用户名" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nickname" class="form-control" placeholder="昵称" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="pwd" class="form-control" placeholder="密码" required="">
+                                </div>
+                                <br></br>
+                                <div class="form-group">
+                                    性别：
+                                    男  <input type="radio"  name="gender" value="男"/>
+                                    女  <input type="radio" name="gender" value="女"/>
+                                </div>
+                                <br></br>
+                                <div class="form-group">
+                                    爱好：
+                                    音乐  <input type="checkbox"  name="favor" value="音乐"/>
+                                    运动  <input type="checkbox" name="favor" value="运动"/>
+                                    电玩  <input type="checkbox" name="favor" value="电玩"/>
+                                    python  <input type="checkbox" name="favor" value="python"/>
+                                    java  <input type="checkbox" name="favor" value="java"/>
+                                </div>
+                                <br></br>
+                                <div class="form-group">
+                                    户籍：
+                                    <select name="city" multiple>
+                                        <option value="上海">上海</option>
+                                        <option value="北京">北京</option>
+                                        <option value="天津">天津</option>
+                                        <option value="南京">南京</option>
+                                        <option value="重庆">重庆</option>
+                                        <option value="台北">台北</option>
+                                    </select>
+                                </div>
+                                <br></br>
+                                <p>
+                                    注意：请勿重复上传，文件名中请勿包含空格！<input type="file" id="uploadFile" name="upnewfile" enctype="multpart/form-data" multiple="multiplt" value="浏览..." class="btn-primary" />
+                                    <script type="text/javascript">
+                                    function uploadFileToService(){
+                                        var filrarr = document.getElementById("uploadFile").files;    
+                                        var formdata = new FormData();   
+                                        for(var i = 0; i < filrarr.length; i++){    
+                                            formdata.append("file", filrarr[i]);
+                                    
+                                        }
+                                    }
+                                    </script>
+                                </p>
+                                <br></br>
+                                <input type="submit" class="btn btn-primary block full-width m-b" value="提交">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+	    <div class="pull-right">
+        	Version <strong>1.0.1</strong>
+    	    </div>
+            <div class="col-md-12">
+                 <strong>Copyright</strong> :van.w © 2020
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body></html>
