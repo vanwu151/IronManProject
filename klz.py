@@ -19,20 +19,27 @@ class Kaolazi:
                 break
         return klzList
 
-def MaoPao(lis):
-    for i in range(0, len(lis)):
-        # print("i = " + str(i))
-        for j in range(0, len(lis) - i - 1):
-            # print("j = " + str(j))
-            if lis[j] > lis[j+1]:
-                lis[j], lis[j+1] = lis[j+1], lis[j]
-    return lis
+class MaoPaoklz(Kaolazi):  # 继承kaolazi类
+    # def __init__(self, x):
+    #     super().__init__(self)
+    #     self.lis = self.klz()
+
+    def MaoPao(self, x):
+        kl = Kaolazi(self.x)  # 调用父类生成实例k
+        kllist = kl.klz()      # 利用实例k生成kaolazi序列klist
+        for i in range(0, len(kllist)):
+            for j in range(0, len(kllist) - i - 1):
+                if kllist[j] > kllist[j+1]:
+                    kllist[j], kllist[j+1] = kllist[j+1], kllist[j]
+        return kllist
 
 
 if __name__ == "__main__":
     x = int(input("输入正整数: "))
-    k = Kaolazi(x)
-    klist = k.klz()
-    print(klist)
-    print(MaoPao(klist))
+    k = MaoPaoklz(x)
+    klist2 = k.MaoPao(x)
+    klist1 = k.klz()
+    print(klist1)
+    print(klist2)
+
 
