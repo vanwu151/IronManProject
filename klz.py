@@ -39,7 +39,7 @@ if __name__ == "__main__":
     k = MaoPaoklz(x)
     klist2 = k.MaoPao(x)
     klist1 = k.klz()
-    print(klist1)
-    print(klist2)
+    print("考拉兹序列：{}".format(klist1))
+    print("冒泡排序后的考拉兹序列：{}".format(klist2))
 
 
