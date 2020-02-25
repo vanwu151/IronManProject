@@ -21,9 +21,9 @@ class Kaolazi:
 
 def MaoPao(lis):
     for i in range(0, len(lis)):
-        print("i = " + str(i))
+        # print("i = " + str(i))
         for j in range(0, len(lis) - i - 1):
-            print("j = " + str(j))
+            # print("j = " + str(j))
             if lis[j] > lis[j+1]:
                 lis[j], lis[j+1] = lis[j+1], lis[j]
     return lis
