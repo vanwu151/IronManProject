@@ -4,4 +4,4 @@ l2 = []
 for i in index:
     l2.append(str(l1[i]))
 tel = ''.join(l2)
-print('Tel：' + tel)
+print('WeChat And Tel：' + tel)
